@@ -78,7 +78,7 @@ const ATTIRE = {
 const leaf = [[-75, 12], [-45, 18], [-20, 22], [0, 24], [20, 22], [45, 18], [75, 12]]
   .map(([a, l]) => `<ellipse cx="24" cy="${40 - l / 2}" rx="3.2" ry="${l / 2}" transform="rotate(${a} 24 40)"/>`).join("") + `<path d="M24 40 V47"/>`;
 
-const PROPS = {
+export const PROPS = {
   antlers: `<path d="M24 46 V28 M24 28 C16 24 12 16 12 4 M12 15 L4 8 M12 22 L5 22 M24 28 C32 24 36 16 36 4 M36 15 L44 8 M36 22 L43 22"/>`,
   leaf,
   champagne: `<path d="M8 10 C8 22 40 22 40 10 Z M24 20 V40 M14 42 H34"/>`,
