@@ -151,7 +151,7 @@ export function portrait(card, tint) {
 </svg>`;
 }
 
-export function crest() {
+export function crest(label = "TRUMPS") {
   return `<svg viewBox="0 0 200 310" class="crest-svg" aria-hidden="true">
   <defs>
     <pattern id="lattice" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -168,7 +168,7 @@ export function crest() {
     <text x="0" y="16" text-anchor="middle" font-family="Cinzel, serif" font-weight="700" font-size="44" fill="${GOLD}">G</text>
     <path d="M-26 -46 L-22 -64 L-12 -52 L0 -70 L12 -52 L22 -64 L26 -46 Z" fill="${GOLD}"/>
     <path d="M-40 -12 C-58 -20 -60 -44 -50 -56 M-44 -36 L-56 -40 M-42 -24 L-54 -24 M40 -12 C58 -20 60 -44 50 -56 M44 -36 L56 -40 M42 -24 L54 -24" stroke="${GOLD}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <text x="0" y="68" text-anchor="middle" font-family="Cinzel, serif" font-size="9" letter-spacing="3" fill="${GOLD}">TRUMPS</text>
+    <text x="0" y="68" text-anchor="middle" font-family="Cinzel, serif" font-size="9" letter-spacing="3" fill="${GOLD}">${label}</text>
   </g>
 </svg>`;
 }

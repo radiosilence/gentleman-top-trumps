@@ -1,5 +1,5 @@
-import { CARDS, STATS, FACTIONS } from "./cards.js";
-import { portrait, crest } from "./portraits.js";
+import { CARDS, STATS, FACTIONS } from "../shared/cards.js";
+import { portrait, crest } from "../shared/portraits.js";
 
 const $ = (s) => document.querySelector(s);
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));

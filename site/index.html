@@ -4,96 +4,57 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0d241a">
-  <meta name="description" content="An unofficial fan-made Top Trumps style card game for The Gentlemen. Play against the computer in the browser.">
-  <title>Gentlemen's Trumps</title>
+  <meta name="description" content="Unofficial fan games for The Gentlemen: a Top Trumps style card game and two personality quizzes.">
+  <title>The Gentlemen: Fan Games</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23123224'/%3E%3Cpath d='M16 14H48V36C48 50 32 58 32 58S16 50 16 36Z' fill='%236b1d22' stroke='%23c9a45c' stroke-width='3'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='serif' font-weight='700' font-size='28' fill='%23c9a45c'%3EG%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared/theme.css">
+  <link rel="stylesheet" href="hub.css">
 </head>
 <body>
-  <main id="title" class="screen">
-    <div class="title-inner">
-      <div class="crest-wrap" id="title-crest"></div>
+  <main class="hub">
+    <header class="hub-head">
+      <div class="hub-crest" id="hub-crest"></div>
       <p class="kicker">Halstead &amp; Associates present</p>
-      <h1>Gentlemen's<br><span>Trumps</span></h1>
-      <p class="tagline">Breeding, money and menace. Forty cards from Halstead and its enemies, played by Top Trumps rules.</p>
-
-      <fieldset class="choice" id="opponents">
-        <legend>Your opponent</legend>
-      </fieldset>
-
-      <fieldset class="choice lengths">
-        <legend>Length</legend>
-        <label><input type="radio" name="length" value="24"><span><b>Quick</b><small>24 cards</small></span></label>
-        <label><input type="radio" name="length" value="40"><span><b>Full deck</b><small>40 cards</small></span></label>
-      </fieldset>
-
-      <button class="btn primary" id="deal">Deal the cards</button>
-      <div class="row">
-        <button class="btn" id="open-gallery">The deck</button>
-        <button class="btn" id="open-rules">How to play</button>
-      </div>
-
-      <p class="disclaimer">An unofficial, non-commercial fan game. Not affiliated with or endorsed by Netflix, Moonage Pictures, Guy Ritchie or Top Trumps. Characters belong to their owners; the silhouettes are original illustrations. Stats are ratings out of 100 drawn from events on screen. <strong>Contains spoilers for series one and two.</strong></p>
-    </div>
-  </main>
-
-  <section id="game" class="screen" hidden>
-    <header class="bar opp">
-      <div class="pile" id="pile-cpu"><span class="count" id="count-cpu">0</span></div>
-      <div class="who"><b><span id="cpu-name"></span> <i class="lead" id="lead-cpu">Lead</i></b><small id="cpu-sub"></small></div>
-      <button class="icon-btn" id="mute" aria-label="Toggle sound"></button>
-      <button class="icon-btn" id="quit" aria-label="Leave the table">✕</button>
+      <h1>The<br><span>Gentlemen</span></h1>
+      <p class="tagline">Three diversions for the estate, the family business and everyone caught between them.</p>
+      <p class="cutoff">Safe up to the end of series 2</p>
     </header>
-    <p id="prompt" aria-live="polite"></p>
-    <div id="table">
-      <div class="pot" id="pot" hidden><div class="pile"></div><span>Pot <b id="count-pot">0</b></span></div>
-    </div>
-    <footer class="bar you">
-      <div class="pile" id="pile-you"><span class="count" id="count-you">0</span></div>
-      <div class="who"><b>You <i class="lead" id="lead-you">Lead</i></b><small>Your pile</small></div>
-      <div class="score" id="score"></div>
+
+    <nav class="tiles" aria-label="Games">
+      <a class="tile" href="trumps/" style="--i:0">
+        <div class="tile-art" data-art="trumps"></div>
+        <div class="tile-text">
+          <h2>Gentlemen's Trumps</h2>
+          <p>Forty cards from Halstead and its enemies, played by Top Trumps rules against Freddy, Susie or Bobby.</p>
+          <span class="tile-go">Take a seat</span>
+        </div>
+      </a>
+      <a class="tile soon" aria-disabled="true" style="--i:1">
+        <div class="tile-art" data-art="role"></div>
+        <div class="tile-text">
+          <h2>Your Place in the Firm</h2>
+          <p>Which part of the operation would you run? From the farm under the estate to the seat in the Lords.</p>
+          <span class="tile-go">Coming soon</span>
+        </div>
+      </a>
+      <a class="tile soon" aria-disabled="true" style="--i:2">
+        <div class="tile-art" data-art="character"></div>
+        <div class="tile-text">
+          <h2>Which Gentleman Are You?</h2>
+          <p>Duke, heir, gamekeeper or hired help. A few questions of taste and temperament will settle it.</p>
+          <span class="tile-go">Coming soon</span>
+        </div>
+      </a>
+    </nav>
+
+    <footer class="hub-foot">
+      <p class="siblings">More fan games: <b aria-current="page">The Gentlemen</b> · <a href="https://radiosilence.github.io/silo-quiz/">Silo</a> · <a href="https://radiosilence.github.io/slow-horses/">Slow Horses</a></p>
+      <p class="disclaimer">A non-commercial fan project. Not affiliated with or endorsed by Netflix, Moonage Pictures, Guy Ritchie or Winning Moves (Top Trumps). Characters belong to their owners; the silhouettes and emblems are original illustrations.</p>
     </footer>
-  </section>
-
-  <section id="gallery" class="screen" hidden>
-    <header class="gallery-head">
-      <button class="btn small" id="close-gallery">← Back</button>
-      <h2>The Deck</h2>
-      <span></span>
-    </header>
-    <div class="gallery-grid" id="gallery-grid"></div>
-  </section>
-
-  <div id="stage" aria-live="off"></div>
-
-  <dialog id="rules">
-    <h2>How to play</h2>
-    <ol>
-      <li>The deck is shuffled and dealt between you and your opponent. You only ever see the top card of your own pile.</li>
-      <li>Whoever holds the lead picks a category from their card. Both cards are compared on it.</li>
-      <li>The higher number wins both cards, which go to the bottom of the winner's pile, and the winner takes the lead.</li>
-      <li>A tie sends both cards to the pot. The same player picks again, and the next hand's winner takes the pot as well.</li>
-      <li>Take every card to win.</li>
-    </ol>
-    <dl class="stat-help" id="stat-help"></dl>
-    <form method="dialog"><button class="btn primary">Understood</button></form>
-  </dialog>
-
-  <dialog id="zoom"><div id="zoom-card"></div><form method="dialog"><button class="btn small">Close</button></form></dialog>
-
-  <dialog id="end">
-    <div class="seal" id="end-seal"></div>
-    <h2 id="end-title"></h2>
-    <p id="end-text"></p>
-    <div class="row">
-      <button class="btn primary" id="again">Deal again</button>
-      <button class="btn" id="to-title">Leave the table</button>
-    </div>
-  </dialog>
-
-  <script type="module" src="game.js"></script>
+  </main>
+  <script type="module" src="hub.js"></script>
 </body>
 </html>
