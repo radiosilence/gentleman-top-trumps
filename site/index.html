@@ -43,7 +43,7 @@
   <section id="game" class="screen" hidden>
     <header class="bar opp">
       <div class="pile" id="pile-cpu"><span class="count" id="count-cpu">0</span></div>
-      <div class="who"><b id="cpu-name"></b><small id="cpu-sub"></small></div>
+      <div class="who"><b><span id="cpu-name"></span> <i class="lead" id="lead-cpu">Lead</i></b><small id="cpu-sub"></small></div>
       <button class="icon-btn" id="mute" aria-label="Toggle sound"></button>
       <button class="icon-btn" id="quit" aria-label="Leave the table">✕</button>
     </header>
@@ -53,7 +53,7 @@
     </div>
     <footer class="bar you">
       <div class="pile" id="pile-you"><span class="count" id="count-you">0</span></div>
-      <div class="who"><b>You</b><small>Your pile</small></div>
+      <div class="who"><b>You <i class="lead" id="lead-you">Lead</i></b><small>Your pile</small></div>
       <div class="score" id="score"></div>
     </footer>
   </section>
