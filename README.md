@@ -25,9 +25,13 @@ Forty characters from series one and two, each rated out of 100 on Pedigree, For
 
 ## The quizzes
 
-Both quizzes run on one engine (`site/shared/quiz.js`); each quiz folder holds only its data. Every answer adds weights to the results and to five temperament axes (`site/shared/axes.js`), and the result screen shows the winner, the runner-up and where the player sits on each axis. The result is encoded in the URL hash, so a shared link opens that result directly.
+Both quizzes run on one engine (`site/shared/quiz.js`); each quiz folder holds only its data. Every answer adds weights to two or three results and to five temperament axes (`site/shared/axes.js`), and the result screen shows the winner, the runner-up and where the player sits on each axis. The result is encoded in the URL hash, so a shared link opens that result directly.
 
-**Roles are parts of the business the show depicts**, from the farm under Halstead to the seat in the Lords, and each lists the characters who fill it on screen. Weights are tuned so that, over every possible combination of answers, each role wins between about 6% and 13% of the time; ties go to the role listed first.
+**Oblique questions.** Most questions are about temperament (a letter you were not meant to read, a dull Sunday, what you would save from a fire) rather than the job itself, so the answer is not obvious from the wording. Only a handful are set inside the business.
+
+**Balanced results.** No option is worth more than two points to any result, so no single question decides the outcome. Ties are broken by a hash of the answers, so the same sheet always gives the same result without favouring whichever result is listed first. Over 10,000 random answer sheets every role comes up within roughly 70% to 130% of an even share.
+
+**Roles are parts of the business the show depicts**, from the farm under Halstead to the seat in the Lords, and each lists the characters who fill it on screen.
 
 **Characters come from the deck.** The character quiz uses sixteen of the Trumps cards, with their silhouettes and names taken from `cards.js`, so the result portrait matches the card. Over every combination of answers each character wins between about 4.5% and 9% of the time.
 

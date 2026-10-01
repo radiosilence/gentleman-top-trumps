@@ -30,7 +30,7 @@ export function run(data) {
         <p class="tagline">${data.tagline}</p>
         <p class="cutoff">Safe up to the end of series 2</p>
         <button class="btn primary" id="begin">Begin</button>
-        <p class="fine">${data.questions.length} questions · about two minutes</p>
+        <p class="fine">${data.questions.length} questions · about ${Math.ceil(data.questions.length / 6)} minutes</p>
       </section>
       <section id="ask" class="q-screen" hidden>
         <div class="progress" aria-hidden="true"><span></span></div>
@@ -65,7 +65,7 @@ export function run(data) {
 
   async function ask(i, dir = 1) {
     const desk = $("#ask .desk");
-    $(".progress span").style.width = `${(i / data.questions.length) * 100}%`;
+    $(".progress span").style.transform = `scaleX(${i / data.questions.length})`;
     const old = desk.firstElementChild;
     if (old) {
       await animate(old, [{}, { transform: `translateX(${-dir * 110}%) rotate(${-dir * 8}deg)`, opacity: 0 }], { duration: 380, easing: "cubic-bezier(.5, 0, .75, 0)" });
@@ -113,7 +113,11 @@ export function run(data) {
       for (const [k, v] of Object.entries(o.r)) totals[k] += v;
       for (const [k, v] of Object.entries(o.a ?? {})) axes[k] += v;
     });
-    const ranked = data.results.map((r) => r.id).sort((a, b) => totals[b] - totals[a]);
+    // Ties are broken by a hash of the answers: the same sheet always gives the same result,
+    // but no result is favoured just for being listed first.
+    const seed = answers.reduce((h, j) => (h * 31 + j + 1) % 1000003, 7);
+    const order = Object.fromEntries(data.results.map((r, i) => [r.id, (seed * (i + 1) * 7919) % 1000003]));
+    const ranked = data.results.map((r) => r.id).sort((a, b) => totals[b] - totals[a] || order[a] - order[b]);
     return {
       top: ranked[0],
       second: ranked[1],
@@ -125,7 +129,7 @@ export function run(data) {
     const res = score();
     const hash = `#r=${res.top}&s=${res.second}&a=${res.axes.join(",")}`;
     history.replaceState(null, "", hash);
-    $(".progress span").style.width = "100%";
+    $(".progress span").style.transform = "scaleX(1)";
     const old = $("#ask .sheet");
     if (old) await animate(old, [{}, { transform: "translateY(-30px) scale(.94)", opacity: 0 }], { duration: 300 });
     showResult(res, false);
@@ -155,7 +159,7 @@ export function run(data) {
       ${data.extra?.(r) ?? ""}
       <section class="axes">
         <h3>${shared ? "Their temperament" : "Your temperament"}</h3>
-        ${data.axes.map((a, i) => `<div class="axis" style="--v:${axes[i]}"><span class="lo">${a.lo}</span><span class="track"><b></b></span><span class="hi">${a.hi}</span></div>`).join("")}
+        ${data.axes.map((a, i) => `<div class="axis" style="--v:${axes[i]}"><span class="lo">${a.lo}</span><span class="track"><i><b></b></i></span><span class="hi">${a.hi}</span></div>`).join("")}
       </section>
       <section class="runner">
         <div class="runner-art">${data.art(s, true)}</div>
@@ -171,7 +175,7 @@ export function run(data) {
     const sheet = $(".sheet", box);
     animate(sheet, [{ transform: "translateY(40px) rotate(-1.5deg)", opacity: 0 }, {}], { duration: 600 });
     $(".res-seal", box).classList.add("show");
-    box.querySelectorAll(".axis").forEach((el, i) => animate($("b", el), [{ left: "50%" }, { left: `${50 + axes[i] / 2}%` }], { duration: 900, delay: 500 + i * 90 }));
+    box.querySelectorAll(".axis i").forEach((el, i) => animate(el, [{ transform: "translateX(0)" }, { transform: `translateX(${axes[i] / 2}%)` }], { duration: 900, delay: 500 + i * 90 }));
     $("[data-retake]", box).addEventListener("click", start);
     $("[data-share]", box)?.addEventListener("click", () => share(r));
   }
@@ -217,6 +221,8 @@ export function run(data) {
     const i = answers.length;
     if (n >= 1 && n <= 4 && $("#ask .sheet")) choose(i, n - 1);
   });
+
+  document.addEventListener("visibilitychange", () => document.documentElement.classList.toggle("paused", document.hidden));
 
   const fromHash = parse();
   if (fromHash) showResult(fromHash, true);
