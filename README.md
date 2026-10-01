@@ -15,7 +15,9 @@ Everything is safe up to the end of series 2.
 
 ## Gentlemen's Trumps
 
-Forty characters from series one and two, each rated out of 100 on Pedigree, Fortune, Menace, Cunning, Composure and Bloodshed. Play follows the standard rules: the leader calls a category, the higher number takes both cards, and a tie sends both to a pot that the next hand's winner collects.
+Forty characters from series one and two, each rated out of 100 on Pedigree, Fortune, Menace, Cunning, Composure, Bloodshed and Chaos. Play follows the standard rules: the leader calls a category, the higher number takes both cards, and a tie sends both to a pot that the next hand's winner collects.
+
+**Capacities, not virtues.** Every stat measures how much of something a character has, and the higher number always wins. That is why Bloodshed and Chaos count as strengths: Freddy and Red Ned finally have a category of their own.
 
 **Ratings, not invented numbers.** The show gives almost no hard figures (fortunes, kill counts), so each stat is a judgement out of 100 grounded in what happens on screen. The card blurbs record the events the numbers rest on. Expect arguments.
 
