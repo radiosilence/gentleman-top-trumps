@@ -9,6 +9,7 @@ https://radiosilence.github.io/gentleman-top-trumps/
 | `/` | Hub linking the games, with the spoiler cut-off and disclaimer |
 | `/trumps/` | Gentlemen's Trumps, a Top Trumps-style card game against the computer |
 | `/role/` | Your Place in the Firm: which part of the operation would you run? |
+| `/character/` | Which Gentleman Are You? Sixteen characters from the deck |
 
 Everything is safe up to the end of series 2.
 
@@ -25,6 +26,8 @@ Forty characters from series one and two, each rated out of 100 on Pedigree, For
 Both quizzes run on one engine (`site/shared/quiz.js`); each quiz folder holds only its data. Every answer adds weights to the results and to five temperament axes (`site/shared/axes.js`), and the result screen shows the winner, the runner-up and where the player sits on each axis. The result is encoded in the URL hash, so a shared link opens that result directly.
 
 **Roles are parts of the business the show depicts**, from the farm under Halstead to the seat in the Lords, and each lists the characters who fill it on screen. Weights are tuned so that, over every possible combination of answers, each role wins between about 6% and 13% of the time; ties go to the role listed first.
+
+**Characters come from the deck.** The character quiz uses sixteen of the Trumps cards, with their silhouettes and names taken from `cards.js`, so the result portrait matches the card. Over every combination of answers each character wins between about 4.5% and 9% of the time.
 
 ## Why it is built this way
 

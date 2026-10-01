@@ -148,6 +148,8 @@ body { overflow-x: hidden; }
 .sheet.result { text-align: center; padding: 26px 20px 22px; }
 .shared-note { margin: 0 0 6px; font: 600 10px var(--caps); letter-spacing: .22em; text-transform: uppercase; color: var(--oxblood); }
 .res-art { position: relative; width: 190px; margin: 0 auto 6px; }
+.res-art.cameo { width: 220px; }
+.res-art.cameo .res-seal { left: -44px; right: auto; bottom: 70px; transform: rotate(-8deg); }
 .res-art > svg { display: block; width: 100%; height: auto; filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .25)); }
 .res-seal { right: -54px; bottom: 46px; width: 76px; height: 76px; font-size: 30px; animation-delay: .45s !important; }
 .sheet.result .kicker { margin-top: 6px; color: var(--gold-lo); }
