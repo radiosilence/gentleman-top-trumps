@@ -140,7 +140,7 @@ body { overflow-x: hidden; }
   pointer-events: none;
   z-index: 3;
 }
-.sheet-seal { right: 14px; top: 14px; width: 62px; height: 62px; }
+.sheet-seal { right: 16px; bottom: 10px; width: 58px; height: 58px; }
 .sheet-seal.show, .res-seal.show { animation: stamp .45s cubic-bezier(.2, 1.6, .4, 1) forwards; }
 
 /* ---------- Result ---------- */

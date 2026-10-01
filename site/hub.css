@@ -22,6 +22,7 @@
 }
 .hub-crest svg { display: block; width: 100%; border-radius: 8px; }
 @keyframes float { 50% { transform: translateY(-5px) rotate(-1.5deg); } }
+.hub-head h1 span { font-size: 1.12em; letter-spacing: .08em; }
 .tagline { margin: 0 auto; max-width: 32ch; font-style: italic; font-size: 19px; line-height: 1.3; color: #e9dfc6; }
 .cutoff {
   margin: 4px 0 0;
@@ -87,21 +88,11 @@ a.tile[href]:focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 
 }
 .tile-go::after { content: " →"; font-family: var(--serif); }
 
-.tile.soon { cursor: default; }
-.tile.soon .tile-art, .tile.soon .tile-text p { opacity: .55; filter: grayscale(.5); }
-.tile.soon .tile-go {
-  padding: 5px 9px;
-  border-radius: 12px;
-  color: #f8e6c9;
-  background: radial-gradient(circle at 35% 30%, #b3373a, #7d1418 60%, #5a0c10);
-  transform: rotate(-3deg);
-}
-.tile.soon .tile-go::after { content: none; }
 
 .hub-foot { margin-top: auto; text-align: center; display: flex; flex-direction: column; gap: 10px; }
 .siblings { margin: 0; font: 400 12px/1.6 var(--caps); letter-spacing: .12em; text-transform: uppercase; color: #cbbf9f; }
 .siblings b { color: var(--gold-hi); font-weight: 600; }
-.siblings a { color: var(--gold); text-underline-offset: 3px; }
+.siblings a { color: var(--gold); text-underline-offset: 3px; white-space: nowrap; }
 .siblings a:hover { color: var(--gold-hi); }
 .hub-foot .disclaimer { max-width: 60ch; margin: 0 auto; }
 

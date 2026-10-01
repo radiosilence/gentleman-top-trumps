@@ -4,5 +4,5 @@ export const AXES = [
   { key: "method", lo: "Charm", hi: "Force" },
   { key: "nerve", lo: "Hot-headed", hi: "Ice-cool" },
   { key: "loyalty", lo: "Number one", hi: "Family first" },
-  { key: "appetite", lo: "Content", hi: "Wants everything" },
+  { key: "appetite", lo: "Content", hi: "Wants it all" },
 ];
