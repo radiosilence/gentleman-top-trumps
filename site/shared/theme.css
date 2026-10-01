@@ -44,6 +44,7 @@ body::after {
 }
 
 [hidden] { display: none !important; }
+h1, h2, h3, .tagline { text-wrap: balance; }
 
 .screen {
   position: fixed;

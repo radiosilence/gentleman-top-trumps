@@ -48,7 +48,7 @@ Both quizzes run on one engine (`site/shared/quiz.js`); each quiz folder holds o
 ## Run locally
 
 ```
-mise run serve   # http://localhost:8766
+mise run serve   # http://localhost:8770
 ```
 
 ## Disclaimer

@@ -224,6 +224,12 @@ export function run(data) {
 
   document.addEventListener("visibilitychange", () => document.documentElement.classList.toggle("paused", document.hidden));
 
+  // A shared link pasted into a tab that already has the quiz open only changes the hash.
+  addEventListener("hashchange", () => {
+    const res = parse();
+    if (res) showResult(res, true);
+  });
+
   const fromHash = parse();
   if (fromHash) showResult(fromHash, true);
   else show("intro");

@@ -14,8 +14,8 @@ body { overflow-x: hidden; }
 
 /* ---------- Intro ---------- */
 
-#intro { align-items: center; text-align: center; gap: 14px; }
-.hero { width: 150px; animation: float 6s ease-in-out infinite; }
+#intro { align-items: center; text-align: center; gap: 14px; margin-block: auto; }
+.hero { width: 150px; animation: float 6s ease-in-out infinite; will-change: transform; }
 .hero svg { display: block; width: 100%; height: auto; filter: drop-shadow(0 12px 22px rgba(0, 0, 0, .5)); }
 @keyframes float { 50% { transform: translateY(-5px) rotate(-1.5deg); } }
 #intro h1 { font-size: clamp(32px, 10vw, 46px); line-height: 1; }
