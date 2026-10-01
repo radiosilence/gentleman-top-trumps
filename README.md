@@ -2,7 +2,7 @@
 
 Unofficial browser games for the Netflix series *The Gentlemen*.
 
-https://radiosilence.github.io/gentleman-top-trumps/
+https://radiosilence.github.io/gentlemen/
 
 | Path | Game |
 |---|---|
@@ -37,6 +37,8 @@ Both quizzes run on one engine (`site/shared/quiz.js`); each quiz folder holds o
 
 **Silhouettes rather than photographs.** Cast photos belong to Netflix and the photographers, and would make the project look official. Each portrait is a cut-paper profile assembled in `portraits.js` from parts (nose, chin, hair, hat, beard, attire), with an emblem on the frame naming the character's signature object. Adding a character means choosing parts, not drawing.
 
+**Unique SVG ids.** The same portrait can be drawn on a hidden screen and a visible one at once, and Safari resolves `url(#id)` to the first match even when it is hidden, which empties clips and gradients. `portraits.js` therefore numbers every id it emits.
+
 ## Run locally
 
 ```
@@ -47,4 +49,4 @@ mise run serve   # http://localhost:8766
 
 A non-commercial fan project, not affiliated with or endorsed by Netflix, Moonage Pictures, Guy Ritchie or Winning Moves (Top Trumps). Character names belong to their owners. Contains spoilers up to the end of series 2.
 
-Sister sites: [Silo](https://radiosilence.github.io/silo-quiz/) · [Slow Horses](https://radiosilence.github.io/slow-horses/)
+Sister sites: [Silo](https://radiosilence.github.io/silo/) · [Slow Horses](https://radiosilence.github.io/slowhorses/)

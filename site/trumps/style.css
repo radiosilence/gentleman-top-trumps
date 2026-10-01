@@ -195,6 +195,11 @@ body { overflow: hidden; overscroll-behavior: none; }
   box-shadow: 0 2px 0 rgba(0, 0, 0, .3), 0 18px 40px rgba(0, 0, 0, .55);
 }
 .face.back { transform: rotateY(180deg); background: #123224; }
+/* WebKit does not always honour backface-visibility, so swap faces at the flip's midpoint too. */
+.face.front { transition: visibility 0s .18s; }
+.card.down .face.front { visibility: hidden; }
+.face.back { visibility: hidden; transition: visibility 0s .18s; }
+.card.down .face.back { visibility: visible; }
 .face.back svg { display: block; width: 100%; height: 100%; }
 
 .face.front {
@@ -404,8 +409,8 @@ body { overflow: hidden; overscroll-behavior: none; }
 /* ---------- Dialogs ---------- */
 
 dialog h2 { margin: 0 0 10px; font: 700 22px var(--caps); color: var(--gold-hi); letter-spacing: .06em; text-align: center; }
-dialog ol { padding-left: 20px; margin: 0 0 14px; line-height: 1.3; }
-dialog li { margin-bottom: 6px; }
+#rules ol { padding-left: 20px; margin: 0 0 14px; line-height: 1.3; }
+#rules li { margin-bottom: 6px; }
 .stat-help { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 0 0 16px; font-size: 16px; }
 .stat-help dt { font: 600 12px/1.6 var(--caps); color: var(--gold); letter-spacing: .08em; }
 .stat-help dd { margin: 0; font-style: italic; }

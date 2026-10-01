@@ -6,6 +6,9 @@ const GREY = "#3b352e";
 const GOLD = "#c9a45c";
 const CREAM = "#f3ead6";
 
+// SVG ids must be unique per render: Safari resolves url(#id) to the first match, even inside a hidden screen.
+let seq = 0;
+
 const NOSE = {
   straight: "L163 121 L152 125",
   aquiline: "C158 104 166 114 163 122 L152 126",
@@ -116,10 +119,10 @@ export const PROPS = {
 
 export function portrait(card, tint) {
   const l = card.look;
-  const id = `p-${card.id}`;
+  const id = `p-${card.id}-${++seq}`;
   const hairFill = l.hairTone === "grey" ? GREY : INK;
   const attire = ATTIRE[l.attire]?.(l.tie ?? "#6b1d22") ?? "";
-  return `<svg viewBox="0 0 200 250" class="portrait-svg" overflow="visible" aria-hidden="true">
+  return `<svg viewBox="0 0 200 250" class="portrait-svg" aria-hidden="true">
   <defs>
     <radialGradient id="${id}-bg" cx="45%" cy="38%" r="75%">
       <stop offset="0" stop-color="#fbf5e6"/>
@@ -152,15 +155,16 @@ export function portrait(card, tint) {
 }
 
 export function crest(label = "TRUMPS") {
+  const pid = `lattice-${++seq}`;
   return `<svg viewBox="0 0 200 310" class="crest-svg" aria-hidden="true">
   <defs>
-    <pattern id="lattice" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <pattern id="${pid}" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
       <path d="M0 0 H16 M0 0 V16" stroke="${GOLD}" stroke-width=".8" opacity=".35"/>
       <circle cx="8" cy="8" r="1.2" fill="${GOLD}" opacity=".45"/>
     </pattern>
   </defs>
   <rect x="0" y="0" width="200" height="310" fill="#123224"/>
-  <rect x="10" y="10" width="180" height="290" rx="8" fill="url(#lattice)" stroke="${GOLD}" stroke-width="2"/>
+  <rect x="10" y="10" width="180" height="290" rx="8" fill="url(#${pid})" stroke="${GOLD}" stroke-width="2"/>
   <rect x="16" y="16" width="168" height="278" rx="5" fill="none" stroke="${GOLD}" stroke-width=".8" opacity=".7"/>
   <g transform="translate(100 150)">
     <ellipse rx="64" ry="78" fill="#123224" stroke="${GOLD}" stroke-width="2"/>
