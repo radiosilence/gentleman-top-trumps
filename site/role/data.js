@@ -65,78 +65,78 @@ export const ROLES = [
 ];
 
 // r: weights towards roles; a: pull on the shared temperament axes.
-// Most questions are oblique on purpose: the link to a role should only be obvious in hindsight.
+// About a third are set in the show's world; the rest are oblique, so the link to a role shows only in hindsight.
 const QUESTIONS = [
   {
-    q: "A stranger on a train asks to borrow your phone.",
+    q: "A shooting weekend at Halstead. Where are you when the first drive starts?",
     options: [
-      { t: "Hand it over, and keep an eye on it.", r: { keeper: 1, grower: 1, cleaner: 1 }, a: { nerve: 1 } },
-      { t: "Make the call for them, and remember the number.", r: { fixer: 2, books: 1 }, a: { method: -1 } },
-      { t: "Ask where they're headed, and end up sharing a taxi.", r: { con: 2, road: 1 }, a: { method: -1, loyalty: -1 } },
-      { t: "Decline, politely. One does not lend one's telephone.", r: { front: 2, lords: 1 }, a: { breeding: 2 } },
+      { t: "On a peg, with a borrowed gun and a good eye.", r: { front: 2, lords: 1 }, a: { breeding: 2 } },
+      { t: "Out with the beaters, who hear everything.", r: { keeper: 2, grower: 1 }, a: { breeding: -1 } },
+      { t: "Back at the house, going through the guests' coats.", r: { con: 2, cleaner: 1 }, a: { loyalty: -1 } },
+      { t: "Standing behind the guns, keeping count.", r: { muscle: 2, boss: 1 }, a: { nerve: 1 } },
     ],
   },
   {
-    q: "You find a letter that was not meant for you.",
+    q: "The butler says something faintly insolent.",
     options: [
-      { t: "Read it, reseal it and say nothing.", r: { cleaner: 2, con: 1 }, a: { nerve: 2 } },
-      { t: "Put it back unopened. It is none of your business.", r: { keeper: 2, grower: 1 }, a: { loyalty: 1, appetite: -1 } },
-      { t: "Read it, and work out who else would pay to.", r: { boss: 2, fixer: 1 }, a: { appetite: 2 } },
-      { t: "Read it and file it, in case it matters later.", r: { books: 2, lords: 1 }, a: { nerve: 1 } },
+      { t: "Say nothing, and remember it at Christmas.", r: { boss: 2, books: 1 }, a: { nerve: 2 } },
+      { t: "Laugh. He has earned it, and he knows where everything is.", r: { keeper: 2, front: 1 }, a: { loyalty: 1 } },
+      { t: "Find out what he knows that makes him so confident.", r: { fixer: 2, cleaner: 1 }, a: { method: -1 } },
+      { t: "Answer in kind, only sharper.", r: { muscle: 2, con: 1 }, a: { breeding: -1 } },
     ],
   },
   {
-    q: "Your favourite hour of the day?",
+    q: "Your father's will leaves you the estate, and its debts with it.",
     options: [
-      { t: "Five in the morning, before anyone else is up.", r: { grower: 2, keeper: 1 }, a: { appetite: -1 } },
-      { t: "Eleven at night, when people start saying what they mean.", r: { con: 2, muscle: 1 }, a: { breeding: -1 } },
-      { t: "Four o'clock: tea, and the post.", r: { front: 2, books: 1 }, a: { breeding: 2 } },
-      { t: "Whenever everything arrives exactly when it was meant to.", r: { road: 2, boss: 1 }, a: { nerve: 1 } },
+      { t: "Sell the wine and the paintings, and keep every acre.", r: { front: 2, grower: 1 }, a: { breeding: 1, loyalty: 1 } },
+      { t: "Let the cellars to someone who asks no questions.", r: { grower: 2, road: 1 }, a: { appetite: 1 } },
+      { t: "Sit with the ledgers until the numbers behave.", r: { books: 2, grower: 1 }, a: { nerve: 1 } },
+      { t: "Find out who holds the debt, and what they would take instead.", r: { fixer: 2, road: 1 }, a: { method: -1 } },
     ],
   },
   {
-    q: "A friend lies to you about something small.",
+    q: "What should a gentleman never do?",
     options: [
-      { t: "Let it go, but never quite forget.", r: { boss: 2, lords: 1 }, a: { nerve: 1 } },
-      { t: "Ask them about it, there and then.", r: { muscle: 2, keeper: 1 }, a: { method: 1, nerve: -1 } },
-      { t: "Lie back, slightly better.", r: { con: 2, cleaner: 1 }, a: { loyalty: -1 } },
-      { t: "Quietly check what else they have told you.", r: { books: 2, cleaner: 1 }, a: { method: -1 } },
+      { t: "Raise his voice.", r: { cleaner: 2, boss: 1 }, a: { nerve: 2 } },
+      { t: "Sell the land.", r: { front: 2, keeper: 1 }, a: { breeding: 2, loyalty: 1 } },
+      { t: "Get caught.", r: { con: 2, road: 1 }, a: { loyalty: -1 } },
+      { t: "Forget a favour, given or owed.", r: { fixer: 2, lords: 1 }, a: { method: -1 } },
     ],
   },
   {
-    q: "The house is on fire. You save…",
+    q: "A van has broken down in a lane by the estate, and it is not full of cabbages.",
     options: [
-      { t: "The family portraits.", r: { front: 2, keeper: 1 }, a: { breeding: 2, loyalty: 1 } },
-      { t: "The plants on the windowsill.", r: { grower: 2, keeper: 1 }, a: { appetite: -1 } },
-      { t: "The notebook in the bottom drawer.", r: { books: 2, boss: 1 }, a: { nerve: 1 } },
-      { t: "Nothing. I know a man at the insurers.", r: { fixer: 2, road: 1 }, a: { nerve: 1, loyalty: -1 } },
+      { t: "Tow it into the barn before the vicar drives past.", r: { road: 2, keeper: 1 }, a: { nerve: 1 } },
+      { t: "Ring a man with a flatbed and no memory.", r: { fixer: 2, cleaner: 1 }, a: { nerve: 1 } },
+      { t: "Stand in the lane and wave the traffic round, smiling.", r: { con: 2, front: 1 }, a: { method: -2 } },
+      { t: "Tell the farm to slow the harvest until it is sorted.", r: { grower: 2, road: 1 }, a: { nerve: 1 } },
     ],
   },
   {
-    q: "A rule is plainly unfair.",
+    q: "Which room in a country house would you keep the key to?",
     options: [
-      { t: "Follow it, and quietly lobby to have it changed.", r: { lords: 2, fixer: 1 }, a: { method: -2 } },
-      { t: "Ignore it. Nobody checks.", r: { road: 2, grower: 1 }, a: { loyalty: -1 } },
-      { t: "Make it my rule, and enforce it better.", r: { boss: 2, muscle: 1 }, a: { appetite: 1, method: 1 } },
-      { t: "Find the loophole, and write it down.", r: { lords: 2, books: 1 }, a: { method: -1 } },
+      { t: "The gun room.", r: { keeper: 2, muscle: 1 }, a: { method: 1 } },
+      { t: "The muniment room, with the deeds and the old letters.", r: { books: 2, front: 1 }, a: { breeding: 1 } },
+      { t: "The cellar.", r: { grower: 2, road: 1 }, a: { appetite: -1 } },
+      { t: "The study. Nobody else gets one.", r: { boss: 2, lords: 1 }, a: { appetite: 1 } },
     ],
   },
   {
-    q: "A dull Sunday afternoon.",
+    q: "A neighbour moves the boundary fence two yards onto your land.",
     options: [
-      { t: "A long walk with the dogs, whatever the weather.", r: { keeper: 2, muscle: 1 }, a: { breeding: 1 } },
-      { t: "Potting, pruning and repotting.", r: { grower: 2, cleaner: 1 }, a: { appetite: -1 } },
-      { t: "A drive somewhere I have never been.", r: { road: 2, con: 1 }, a: { appetite: 1 } },
-      { t: "A lunch that turns into dinner with people I have just met.", r: { fixer: 2, front: 1 }, a: { method: -2 } },
+      { t: "Move it back at night, and two yards further.", r: { con: 2, muscle: 1 }, a: { method: 1, loyalty: -1 } },
+      { t: "Write to them, then their solicitor, then their bishop.", r: { lords: 2, books: 1 }, a: { method: -1 } },
+      { t: "Walk over with a dog and a shotgun to discuss it.", r: { keeper: 2, muscle: 1 }, a: { method: 2 } },
+      { t: "Buy their land.", r: { boss: 2, fixer: 1 }, a: { appetite: 2 } },
     ],
   },
   {
-    q: "What annoys you most in a queue?",
+    q: "Bobby Glass would like a word. It will be a prison visit.",
     options: [
-      { t: "People who reach the front and still don't know what they want.", r: { road: 2, boss: 1 }, a: { nerve: -1 } },
-      { t: "Queue-jumpers. Someone ought to say something, and it will be me.", r: { muscle: 2, keeper: 1 }, a: { method: 2, nerve: -1 } },
-      { t: "Nothing. I am usually shown to the front.", r: { front: 2, lords: 1 }, a: { breeding: 2 } },
-      { t: "Queues are for people without a cousin who works there.", r: { road: 2, con: 1 }, a: { breeding: -1 } },
+      { t: "Bring something from outside that he will like.", r: { fixer: 2, front: 1 }, a: { method: -2 } },
+      { t: "Bring the figures, and know them by heart.", r: { road: 2, books: 1 }, a: { nerve: 1 } },
+      { t: "Say as little as possible and agree to nothing.", r: { cleaner: 2, lords: 1 }, a: { nerve: 2 } },
+      { t: "Walk in as though you had called the meeting.", r: { boss: 2, con: 1 }, a: { appetite: 2 } },
     ],
   },
   {
@@ -144,26 +144,26 @@ const QUESTIONS = [
     options: [
       { t: "Go and fetch them myself.", r: { muscle: 2, keeper: 1 }, a: { loyalty: 2, method: 2 } },
       { t: "Pay what is owed, and worry about the rest later.", r: { front: 2, books: 1 }, a: { loyalty: 2 } },
-      { t: "Find out who those people answer to.", r: { fixer: 2, boss: 1 }, a: { method: -1 } },
+      { t: "Find out who those people answer to.", r: { fixer: 2, road: 1 }, a: { method: -1 } },
       { t: "Make the whole thing quietly go away.", r: { cleaner: 2, con: 1 }, a: { nerve: 2 } },
     ],
   },
   {
-    q: "Your desk is…",
+    q: "Good manners, to you, means…",
     options: [
-      { t: "Bare. Everything is where it should be.", r: { cleaner: 2, books: 1 }, a: { nerve: 1 } },
-      { t: "Covered in maps and timetables.", r: { road: 2, fixer: 1 }, a: { appetite: 1 } },
-      { t: "Inherited, enormous, and fitted with a secret drawer.", r: { front: 2, boss: 1 }, a: { breeding: 2 } },
-      { t: "A potting bench and a stool.", r: { grower: 2, keeper: 1 }, a: { breeding: -1 } },
+      { t: "Making a guest feel they are the only one in the room.", r: { front: 2, con: 1 }, a: { method: -2 } },
+      { t: "Never making anyone ask twice.", r: { road: 2, cleaner: 1 }, a: { nerve: 1 } },
+      { t: "Telling someone exactly once before doing something about it.", r: { muscle: 2, keeper: 1 }, a: { method: 2 } },
+      { t: "A proper thank-you letter, by return of post.", r: { lords: 2, keeper: 1 }, a: { breeding: 1 } },
     ],
   },
   {
-    q: "Which compliment would please you most?",
+    q: "The Dowager Duchess asks why there are so many lorries on the estate.",
     options: [
-      { t: "“You're the only one I'd trust with this.”", r: { keeper: 2, cleaner: 1 }, a: { loyalty: 1 } },
-      { t: "“Nobody does it better.”", r: { grower: 2, road: 1 }, a: { appetite: -1 } },
-      { t: "“You could sell sand in the desert.”", r: { con: 2, front: 1 }, a: { method: -2 } },
-      { t: "“People listen when you speak.”", r: { lords: 2, boss: 1 }, a: { appetite: 1 } },
+      { t: "Explain the agricultural grants, at length.", r: { books: 2, lords: 1 }, a: { method: -1 } },
+      { t: "Tell her a charming story about mushrooms.", r: { grower: 2, con: 1 }, a: { loyalty: -1 } },
+      { t: "Tell her nothing, and send the lorries round through the woods.", r: { road: 2, keeper: 1 }, a: { nerve: 1 } },
+      { t: "Tell her the truth. She will have guessed.", r: { front: 2, keeper: 1 }, a: { loyalty: 2 } },
     ],
   },
   {
@@ -185,12 +185,12 @@ const QUESTIONS = [
     ],
   },
   {
-    q: "Pick a party trick.",
+    q: "What did your family leave you that nobody can sell?",
     options: [
-      { t: "Card tricks.", r: { con: 2, books: 1 }, a: { method: -1 } },
-      { t: "Naming any wine by its smell.", r: { front: 2, grower: 1 }, a: { breeding: 2 } },
-      { t: "Remembering every guest's name, and who they came with.", r: { fixer: 2, lords: 1 }, a: { method: -1 } },
-      { t: "Opening a bottle with a kitchen knife.", r: { muscle: 2, road: 1 }, a: { breeding: -2 } },
+      { t: "A name that opens doors.", r: { front: 2, lords: 1 }, a: { breeding: 2 } },
+      { t: "A temper.", r: { muscle: 2, con: 1 }, a: { nerve: -2 } },
+      { t: "Green fingers.", r: { grower: 2, keeper: 1 }, a: { appetite: -1 } },
+      { t: "A long memory.", r: { boss: 2, cleaner: 1 }, a: { nerve: 1 } },
     ],
   },
   {
@@ -251,7 +251,7 @@ const QUESTIONS = [
     q: "The farm workers want more money.",
     options: [
       { t: "Hear them out. They know the crop better than anyone.", r: { grower: 2, keeper: 1 }, a: { loyalty: 2 } },
-      { t: "Run the numbers before saying a word.", r: { books: 2, boss: 1 }, a: { nerve: 1 } },
+      { t: "Run the numbers before saying a word.", r: { books: 2, grower: 1 }, a: { nerve: 1 } },
       { t: "Find the ringleader, and have a private conversation.", r: { muscle: 2, boss: 1 }, a: { method: 2 } },
       { t: "Give a little, and make sure everyone hears about it.", r: { lords: 2, fixer: 1 }, a: { method: -2 } },
     ],

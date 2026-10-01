@@ -85,39 +85,39 @@ const QUESTIONS = [
     ],
   },
   {
-    q: "Your favourite hour of the day?",
+    q: "A shooting party at Halstead. Your part in the day?",
     options: [
-      { t: "Dawn, outside, with the dogs.", r: { geoff: 2, charly: 1 }, a: { appetite: -1 } },
-      { t: "Three in the morning, while the music is still on.", r: { jimmy: 2, freddy: 1 }, a: { nerve: -1, breeding: -1 } },
-      { t: "Dinner, which ought to last at least three hours.", r: { marco: 2, sabrina: 1 }, a: { breeding: 1 } },
-      { t: "Early evening, alone, with something good in the glass.", r: { stanley: 2, felix: 1 }, a: { nerve: 1 } },
+      { t: "Top gun, and gracious about it.", r: { eddie: 2, bella: 1 }, a: { breeding: 2 } },
+      { t: "Loading for someone better connected.", r: { nanny: 2, felix: 1 }, a: { loyalty: 1 } },
+      { t: "At the hip flask by the second drive.", r: { freddy: 2, jimmy: 1 }, a: { nerve: -1 } },
+      { t: "Running the beaters and telling the guns where to stand.", r: { geoff: 2, nanny: 1 }, a: { method: 1 } },
     ],
   },
   {
-    q: "You find something you were not meant to see.",
+    q: "The old Duke has left everything to his second son. Your reaction?",
     options: [
-      { t: "Pretend I didn't, and use it later.", r: { susie: 2, gabrielle: 1 }, a: { appetite: 1, nerve: 1 } },
-      { t: "Put it back exactly as it was.", r: { felix: 2, nanny: 1 }, a: { nerve: 2 } },
-      { t: "Ask about it at dinner, in front of everyone.", r: { charly: 2, freddy: 1 }, a: { nerve: -1, loyalty: 1 } },
-      { t: "Pray on it.", r: { dixon: 2, sabrina: 1 }, a: { method: -1 } },
+      { t: "Delighted. He was always the sensible one.", r: { sabrina: 2, charly: 1 }, a: { loyalty: 1 } },
+      { t: "Furious, and I intend to stay furious.", r: { freddy: 2, jack: 1 }, a: { nerve: -2 } },
+      { t: "Interested. A new duke is a new opportunity.", r: { susie: 2, stanley: 1 }, a: { appetite: 2 } },
+      { t: "Wary. A change at the top brings visitors.", r: { nanny: 2, jimmy: 1 }, a: { nerve: 1 } },
     ],
   },
   {
-    q: "The house is on fire. You save…",
+    q: "What is always in your coat pocket?",
     options: [
-      { t: "The children, then the dogs, then the shotgun.", r: { geoff: 2, nanny: 1 }, a: { loyalty: 2 } },
-      { t: "The painting. It is worth more than the house.", r: { stanley: 2, marco: 1 }, a: { appetite: 1, breeding: 1 } },
-      { t: "The plants. They took years.", r: { jimmy: 2, charly: 1 }, a: { appetite: -2 } },
-      { t: "The passports, the cash and the ledger, in that order.", r: { susie: 2, felix: 1 }, a: { nerve: 2 } },
+      { t: "A rosary, or something very like one.", r: { dixon: 2, marco: 1 }, a: { method: -1 } },
+      { t: "A clean handkerchief and a spare pair of gloves.", r: { felix: 2, sabrina: 1 }, a: { nerve: 2 } },
+      { t: "A corkscrew. One never knows.", r: { marco: 2, stanley: 1 }, a: { breeding: 1 } },
+      { t: "A lighter, though I do not smoke.", r: { gabrielle: 2, susie: 1 }, a: { method: -1 } },
     ],
   },
   {
-    q: "A friend lets you down badly.",
+    q: "An Italian count invites you to his villa for the weekend.",
     options: [
-      { t: "I forgive them, eventually, and remind them often.", r: { sabrina: 2, charly: 1 }, a: { loyalty: 1, breeding: 1 } },
-      { t: "I never mention it again. Nor, wisely, do they.", r: { bobby: 2, felix: 1 }, a: { nerve: 2 } },
-      { t: "I take it personally, and so, in time, does the friend.", r: { eddie: 2, bobby: 1 }, a: { method: 1 } },
-      { t: "I sulk, then buy them a drink.", r: { freddy: 2, marco: 1 }, a: { nerve: -1, loyalty: 1 } },
+      { t: "Accept, and learn the family tree on the flight.", r: { eddie: 2, bella: 1 }, a: { breeding: 1 } },
+      { t: "Accept, and bring my own security.", r: { felix: 2, nanny: 1 }, a: { nerve: 1 } },
+      { t: "Decline. I do not trust men who keep tigers.", r: { geoff: 2, charly: 1 }, a: { appetite: -1 } },
+      { t: "Accept, and see what might be for sale.", r: { stanley: 2, susie: 1 }, a: { appetite: 2 } },
     ],
   },
   {
@@ -132,7 +132,7 @@ const QUESTIONS = [
   {
     q: "What annoys you most in other people?",
     options: [
-      { t: "Bad manners.", r: { sabrina: 2, marco: 1 }, a: { breeding: 2 } },
+      { t: "Bad manners.", r: { marco: 2, sabrina: 1 }, a: { breeding: 2 } },
       { t: "Disloyalty.", r: { bobby: 2, dixon: 1 }, a: { loyalty: 2 } },
       { t: "Mess.", r: { felix: 2, sabrina: 1 }, a: { nerve: 1 } },
       { t: "Being told what to do.", r: { charly: 2, jack: 1 }, a: { nerve: -1 } },
@@ -148,12 +148,12 @@ const QUESTIONS = [
     ],
   },
   {
-    q: "Which compliment would mean the most?",
+    q: "You are visiting someone in an open prison. What do you bring?",
     options: [
-      { t: "“You were born for this.”", r: { eddie: 2, susie: 1 }, a: { appetite: 1 } },
-      { t: "“You're the only one I trust.”", r: { nanny: 2, geoff: 1 }, a: { loyalty: 2 } },
-      { t: "“You have a gift.”", r: { jimmy: 2, bella: 1 }, a: { appetite: -1 } },
-      { t: "“You're wonderful company.”", r: { freddy: 2, marco: 1 }, a: { method: -1 } },
+      { t: "Nothing. They will already have everything.", r: { bobby: 2, stanley: 1 }, a: { nerve: 1 } },
+      { t: "News, carefully chosen.", r: { susie: 2, gabrielle: 1 }, a: { method: -1 } },
+      { t: "A cake my mother made.", r: { charly: 2, jack: 1 }, a: { loyalty: 2 } },
+      { t: "A Bible, with passages marked.", r: { dixon: 2, freddy: 1 }, a: { method: -1 } },
     ],
   },
   {
@@ -180,7 +180,7 @@ const QUESTIONS = [
       { t: "Keep it. Some truths do more harm than good.", r: { sabrina: 2, geoff: 1 }, a: { loyalty: 1, nerve: 1 } },
       { t: "Tell them, gently, at once.", r: { charly: 2, nanny: 1 }, a: { loyalty: 2, method: -1 } },
       { t: "Keep it, and make sure it never comes out.", r: { bobby: 2, dixon: 1 }, a: { nerve: 1, method: 1 } },
-      { t: "Tell them by accident, in the worst possible way.", r: { freddy: 2, jimmy: 1 }, a: { nerve: -2 } },
+      { t: "Tell them by accident, in the worst possible way.", r: { jimmy: 2, freddy: 1 }, a: { nerve: -2 } },
     ],
   },
   {
@@ -193,12 +193,12 @@ const QUESTIONS = [
     ],
   },
   {
-    q: "Pick a party trick.",
+    q: "The staff would describe you as…",
     options: [
-      { t: "Remembering everyone's name.", r: { nanny: 2, gabrielle: 1 }, a: { method: -1 } },
-      { t: "Doing impressions of the host.", r: { gabrielle: 2, bella: 1 }, a: { loyalty: -1 } },
-      { t: "Arm-wrestling all comers.", r: { jack: 2, geoff: 1 }, a: { method: 2 } },
-      { t: "A dramatic reading, unrequested.", r: { dixon: 2, stanley: 1 }, a: { method: -1 } },
+      { t: "Fair, if exacting.", r: { sabrina: 2, eddie: 1 }, a: { breeding: 1 } },
+      { t: "One of them, really.", r: { jimmy: 2, geoff: 1 }, a: { breeding: -2 } },
+      { t: "Generous, and alarming.", r: { marco: 2, bobby: 1 }, a: { method: 1 } },
+      { t: "Who?", r: { freddy: 2, stanley: 1 }, a: { breeding: 2 } },
     ],
   },
   {
