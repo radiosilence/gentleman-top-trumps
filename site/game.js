@@ -176,6 +176,8 @@ function updateCounts() {
   $("#pile-you").classList.toggle("empty", !state.you.length);
   $("#pile-cpu").classList.toggle("empty", !state.cpu.length);
   $("#pot").hidden = !state.pot.length;
+  $("#lead-you").classList.toggle("on", state.lead === "you");
+  $("#lead-cpu").classList.toggle("on", state.lead === "cpu");
   $("#score").textContent = state.rounds ? `Hand ${state.rounds}` : "";
 }
 const bump = (sel) => {
@@ -246,8 +248,9 @@ async function loop(token) {
   }
 }
 
-function tapToContinue(token) {
+function tapToContinue(token, ms) {
   return new Promise((resolve) => {
+    const timer = ms && setTimeout(() => (cleanup(), resolve()), ms);
     const go = (e) => {
       if (e.type === "keydown" && !["Enter", " "].includes(e.key)) return;
       cleanup();
@@ -257,6 +260,7 @@ function tapToContinue(token) {
       window.removeEventListener("pointerup", go);
       window.removeEventListener("keydown", go);
       clearInterval(guard);
+      clearTimeout(timer);
     };
     const guard = setInterval(() => token !== state.token && (cleanup(), resolve()), 200);
     setTimeout(() => {
@@ -332,11 +336,11 @@ async function round(token) {
     if (!key) return;
     sfx.pick();
   } else {
-    say(`${first} is weighing it up…`);
+    say(`${first}'s lead. ${first} picks the category…`);
     await wait(900 + Math.random() * 700);
     if (token !== state.token) return;
     key = opp.pick(cc);
-    say(`${first} calls <b>${STATS.find((s) => s.key === key).label}</b>.`);
+    say(`${first} calls <b>${STATS.find((s) => s.key === key).label}</b> against you.`);
     sfx.pick();
   }
   yEl.querySelector(`[data-stat="${key}"]`).classList.add("picked");
@@ -373,7 +377,7 @@ async function round(token) {
     stamp(yEl, "Won", true);
     sfx.win();
     buzz(30);
-    say(`${label} <b>${a}</b> beats <b>${b}</b>. Your hand.<span class="tap">Tap to continue</span>`);
+    say(`${label} <b>${a}</b> beats <b>${b}</b>. Your hand.`);
   } else if (outcome === "lose") {
     stamp(cEl, "Won");
     sfx.lose();
@@ -383,10 +387,11 @@ async function round(token) {
     stamp(yEl, "Stand&#8209;off", true);
     stamp(cEl, "Stand&#8209;off", true);
     sfx.draw();
-    say(`${label} <b>${a}</b> apiece. Both cards to the pot.<span class="tap">Tap to continue</span>`);
+    say(`${label} <b>${a}</b> apiece. Both cards to the pot.`);
   }
 
-  await tapToContinue(token);
+  // Wins and stand-offs collect themselves; a loss waits so the opponent's card can be read.
+  await tapToContinue(token, outcome === "lose" ? 0 : 1600);
   if (token !== state.token) return;
   say("");
 

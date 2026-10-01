@@ -192,6 +192,23 @@ h1 span { font-size: 1.25em; letter-spacing: .14em; }
 .who { display: flex; flex-direction: column; flex: 1; min-width: 0; }
 .who b { font: 600 15px var(--caps); letter-spacing: .06em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .who small { font-style: italic; color: #cbbf9f; font-size: 15px; }
+.lead {
+  display: inline-block;
+  vertical-align: 2px;
+  margin-left: 6px;
+  padding: 3px 7px;
+  border-radius: 10px;
+  font: 700 9px/1 var(--caps);
+  font-style: normal;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: linear-gradient(var(--gold-hi), var(--gold));
+  opacity: 0;
+  transform: scale(.6);
+  transition: opacity .3s, transform .3s var(--ease);
+}
+.lead.on { opacity: 1; transform: none; }
 .score { font: 400 12px var(--caps); letter-spacing: .15em; color: var(--gold); text-transform: uppercase; }
 
 .pile {
