@@ -27,9 +27,9 @@ Forty characters from series one and two, each rated out of 100 on Pedigree, For
 
 Both quizzes run on one engine (`site/shared/quiz.js`); each quiz folder holds only its data. Every answer adds weights to two or three results and to five temperament axes (`site/shared/axes.js`), and the result screen shows the winner, the runner-up and where the player sits on each axis. The result is encoded in the URL hash, so a shared link opens that result directly.
 
-**A mix of direct and oblique questions.** About a third are set in the show's world (a shooting weekend at Halstead, a prison visit to Bobby Glass, a van that has broken down by the estate). The rest come at temperament sideways through the show's preoccupations, such as manners, staff, land and inheritance, so the answer that suits a role is not obvious from the wording. None of them reuse the stock prompts shared by the sister sites' quizzes.
+**Questions that only fit this show.** About a third are set squarely in the show's world (a prison visit to Bobby Glass, the Dowager asking about the lorries, Tommy Dixon dead on the drawing-room floor). The rest come at temperament sideways through its preoccupations: shooting weekends, staff, wills, hunt balls, dogs and decanters. None of them could appear unchanged in a quiz about another show, and none reuse the stock prompts of the sister sites' quizzes.
 
-**Balanced results.** No option is worth more than two points to any result, so no single question decides the outcome. Ties are broken by a hash of the answers, so the same sheet always gives the same result without favouring whichever result is listed first. Over 10,000 random answer sheets every result in both quizzes comes up within roughly 70% to 135% of an even share.
+**Balanced results.** No option is worth more than two points to any result, so no single question decides the outcome. Ties are broken by a hash of the answers, so the same sheet always gives the same result without favouring whichever result is listed first. Over 10,000 random answer sheets every result in both quizzes comes up within roughly 75% to 135% of an even share.
 
 **Roles are parts of the business the show depicts**, from the farm under Halstead to the seat in the Lords, and each lists the characters who fill it on screen.
 

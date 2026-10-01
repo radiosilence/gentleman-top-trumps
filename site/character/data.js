@@ -76,137 +76,20 @@ const RESULTS = Object.entries(COPY).map(([id, c]) => ({ id, name: card[id].name
 
 const QUESTIONS = [
   {
-    q: "A stranger at a party is plainly lying about who they are.",
-    options: [
-      { t: "Play along, and find out why.", r: { gabrielle: 2, felix: 1 }, a: { method: -2 } },
-      { t: "Say so. Loudly.", r: { freddy: 2, jack: 1 }, a: { nerve: -2 } },
-      { t: "Mention it later to someone who can check.", r: { nanny: 2, felix: 1 }, a: { nerve: 1, loyalty: 1 } },
-      { t: "Admire the effort. One recognises a professional.", r: { bella: 2, stanley: 1 }, a: { breeding: 1, nerve: 1 } },
-    ],
-  },
-  {
-    q: "A shooting party at Halstead. Your part in the day?",
-    options: [
-      { t: "Top gun, and gracious about it.", r: { eddie: 2, bella: 1 }, a: { breeding: 2 } },
-      { t: "Loading for someone better connected.", r: { nanny: 2, felix: 1 }, a: { loyalty: 1 } },
-      { t: "At the hip flask by the second drive.", r: { freddy: 2, jimmy: 1 }, a: { nerve: -1 } },
-      { t: "Running the beaters and telling the guns where to stand.", r: { geoff: 2, nanny: 1 }, a: { method: 1 } },
-    ],
-  },
-  {
     q: "The old Duke has left everything to his second son. Your reaction?",
     options: [
       { t: "Delighted. He was always the sensible one.", r: { sabrina: 2, charly: 1 }, a: { loyalty: 1 } },
       { t: "Furious, and I intend to stay furious.", r: { freddy: 2, jack: 1 }, a: { nerve: -2 } },
-      { t: "Interested. A new duke is a new opportunity.", r: { susie: 2, stanley: 1 }, a: { appetite: 2 } },
+      { t: "Interested. A new duke is a new opportunity.", r: { susie: 2, marco: 1 }, a: { appetite: 2 } },
       { t: "Wary. A change at the top brings visitors.", r: { nanny: 2, jimmy: 1 }, a: { nerve: 1 } },
-    ],
-  },
-  {
-    q: "What is always in your coat pocket?",
-    options: [
-      { t: "A rosary, or something very like one.", r: { dixon: 2, marco: 1 }, a: { method: -1 } },
-      { t: "A clean handkerchief and a spare pair of gloves.", r: { felix: 2, sabrina: 1 }, a: { nerve: 2 } },
-      { t: "A corkscrew. One never knows.", r: { marco: 2, stanley: 1 }, a: { breeding: 1 } },
-      { t: "A lighter, though I do not smoke.", r: { gabrielle: 2, susie: 1 }, a: { method: -1 } },
-    ],
-  },
-  {
-    q: "An Italian count invites you to his villa for the weekend.",
-    options: [
-      { t: "Accept, and learn the family tree on the flight.", r: { eddie: 2, bella: 1 }, a: { breeding: 1 } },
-      { t: "Accept, and bring my own security.", r: { felix: 2, nanny: 1 }, a: { nerve: 1 } },
-      { t: "Decline. I do not trust men who keep tigers.", r: { geoff: 2, charly: 1 }, a: { appetite: -1 } },
-      { t: "Accept, and see what might be for sale.", r: { stanley: 2, susie: 1 }, a: { appetite: 2 } },
-    ],
-  },
-  {
-    q: "Pick a sport.",
-    options: [
-      { t: "Boxing.", r: { jack: 2, nanny: 1 }, a: { method: 2, breeding: -2 } },
-      { t: "Shooting, properly, on someone's estate.", r: { eddie: 2, geoff: 1 }, a: { breeding: 2 } },
-      { t: "Falconry.", r: { bella: 2, sabrina: 1 }, a: { breeding: 2 } },
-      { t: "Cards, for money.", r: { gabrielle: 1, stanley: 1, jack: 1 }, a: { appetite: 1 } },
-    ],
-  },
-  {
-    q: "What annoys you most in other people?",
-    options: [
-      { t: "Bad manners.", r: { marco: 2, sabrina: 1 }, a: { breeding: 2 } },
-      { t: "Disloyalty.", r: { bobby: 2, dixon: 1 }, a: { loyalty: 2 } },
-      { t: "Mess.", r: { felix: 2, sabrina: 1 }, a: { nerve: 1 } },
-      { t: "Being told what to do.", r: { charly: 2, jack: 1 }, a: { nerve: -1 } },
-    ],
-  },
-  {
-    q: "A free afternoon in a strange city.",
-    options: [
-      { t: "Find the best restaurant, and charm the owner.", r: { marco: 2, bella: 1 }, a: { method: -1, breeding: 1 } },
-      { t: "Find a gym.", r: { jack: 2, nanny: 1 }, a: { breeding: -1 } },
-      { t: "Find a church, then a pub.", r: { dixon: 2, geoff: 1 }, a: { breeding: -1 } },
-      { t: "Find the people worth knowing.", r: { gabrielle: 2, stanley: 1 }, a: { appetite: 1, method: -1 } },
-    ],
-  },
-  {
-    q: "You are visiting someone in an open prison. What do you bring?",
-    options: [
-      { t: "Nothing. They will already have everything.", r: { bobby: 2, stanley: 1 }, a: { nerve: 1 } },
-      { t: "News, carefully chosen.", r: { susie: 2, gabrielle: 1 }, a: { method: -1 } },
-      { t: "A cake my mother made.", r: { charly: 2, jack: 1 }, a: { loyalty: 2 } },
-      { t: "A Bible, with passages marked.", r: { dixon: 2, freddy: 1 }, a: { method: -1 } },
-    ],
-  },
-  {
-    q: "How do you take bad news?",
-    options: [
-      { t: "Very calmly, which frightens people.", r: { felix: 2, bobby: 1 }, a: { nerve: 2 } },
-      { t: "Badly, for an hour, and then I fix it.", r: { susie: 2, bella: 1 }, a: { nerve: -1, appetite: 1 } },
-      { t: "Out on the heavy bag.", r: { jack: 2, charly: 1 }, a: { nerve: -2, method: 1 } },
-      { t: "As a sign.", r: { dixon: 2, bobby: 1 }, a: { method: -1 } },
-    ],
-  },
-  {
-    q: "Your ideal house?",
-    options: [
-      { t: "Old, cold and full of ancestors.", r: { sabrina: 2, eddie: 1 }, a: { breeding: 2 } },
-      { t: "A cottage at the edge of the woods.", r: { geoff: 2, nanny: 1 }, a: { appetite: -1 } },
-      { t: "A villa with a terrace above the sea.", r: { bella: 2, marco: 1 }, a: { breeding: 1, appetite: 1 } },
-      { t: "Anywhere with good light and a lot of lamps.", r: { jimmy: 2, jack: 1 }, a: { breeding: -1, appetite: -1 } },
-    ],
-  },
-  {
-    q: "You are asked to keep a secret that could hurt someone you love.",
-    options: [
-      { t: "Keep it. Some truths do more harm than good.", r: { sabrina: 2, geoff: 1 }, a: { loyalty: 1, nerve: 1 } },
-      { t: "Tell them, gently, at once.", r: { charly: 2, nanny: 1 }, a: { loyalty: 2, method: -1 } },
-      { t: "Keep it, and make sure it never comes out.", r: { bobby: 2, dixon: 1 }, a: { nerve: 1, method: 1 } },
-      { t: "Tell them by accident, in the worst possible way.", r: { jimmy: 2, freddy: 1 }, a: { nerve: -2 } },
-    ],
-  },
-  {
-    q: "What is money for?",
-    options: [
-      { t: "Keeping the roof on.", r: { eddie: 2, geoff: 1 }, a: { loyalty: 1 } },
-      { t: "Beautiful things.", r: { stanley: 2, bella: 1 }, a: { breeding: 1, appetite: 1 } },
-      { t: "Proving a point.", r: { susie: 2, jack: 1 }, a: { appetite: 2 } },
-      { t: "Buying silence.", r: { marco: 2, gabrielle: 1 }, a: { method: 1, nerve: 1 } },
-    ],
-  },
-  {
-    q: "The staff would describe you as…",
-    options: [
-      { t: "Fair, if exacting.", r: { sabrina: 2, eddie: 1 }, a: { breeding: 1 } },
-      { t: "One of them, really.", r: { jimmy: 2, geoff: 1 }, a: { breeding: -2 } },
-      { t: "Generous, and alarming.", r: { marco: 2, bobby: 1 }, a: { method: 1 } },
-      { t: "Who?", r: { freddy: 2, stanley: 1 }, a: { breeding: 2 } },
     ],
   },
   {
     q: "The Dowager Duchess invites you to lunch at Halstead.",
     options: [
-      { t: "Arrive early, with flowers from my own garden.", r: { bella: 2, charly: 1 }, a: { breeding: 1 } },
-      { t: "Arrive late, with excuses.", r: { freddy: 2, jimmy: 1 }, a: { nerve: -1 } },
-      { t: "Arrive exactly on time, and watch everyone.", r: { gabrielle: 2, susie: 1 }, a: { nerve: 2 } },
+      { t: "Arrive early, with flowers from my own garden.", r: { bella: 2, susie: 1 }, a: { breeding: 1 } },
+      { t: "Arrive late, with excuses.", r: { jimmy: 2, freddy: 1 }, a: { nerve: -1 } },
+      { t: "Arrive exactly on time, and watch everyone.", r: { susie: 2, gabrielle: 1 }, a: { nerve: 2 } },
       { t: "Ask who else is coming before I accept.", r: { stanley: 2, sabrina: 1 }, a: { appetite: 1 } },
     ],
   },
@@ -216,25 +99,133 @@ const QUESTIONS = [
       { t: "Get the children out.", r: { nanny: 2, charly: 1 }, a: { loyalty: 2 } },
       { t: "Hold the woods.", r: { geoff: 2, jack: 1 }, a: { method: 1, loyalty: 1 } },
       { t: "Find out who sent them, and pay that person a visit.", r: { eddie: 2, bobby: 1 }, a: { method: 2, appetite: 1 } },
-      { t: "Hide in the cellar with the good wine.", r: { jimmy: 2, stanley: 1 }, a: { nerve: -1 } },
+      { t: "Retreat to the cellar with the good claret.", r: { jimmy: 2, stanley: 1 }, a: { nerve: -1 } },
     ],
   },
   {
-    q: "There is a body in the boot of the car.",
+    q: "An Italian count invites you to his villa for the weekend.",
+    options: [
+      { t: "Accept, and learn the family tree on the flight.", r: { bella: 2, eddie: 1 }, a: { breeding: 1 } },
+      { t: "Accept, and bring my own security.", r: { felix: 2, dixon: 1 }, a: { nerve: 1 } },
+      { t: "Decline. I do not trust men who keep tigers.", r: { charly: 2, geoff: 1 }, a: { appetite: -1 } },
+      { t: "Accept, and see what might be for sale.", r: { marco: 2, stanley: 1 }, a: { appetite: 2 } },
+    ],
+  },
+  {
+    q: "The staff at Halstead would describe you as…",
+    options: [
+      { t: "Fair, if exacting.", r: { sabrina: 2, eddie: 1 }, a: { breeding: 1 } },
+      { t: "One of them, really.", r: { jimmy: 2, felix: 1 }, a: { breeding: -2 } },
+      { t: "Generous, and alarming.", r: { marco: 2, bobby: 1 }, a: { method: 1 } },
+      { t: "Who?", r: { bella: 2, stanley: 1 }, a: { breeding: 2 } },
+    ],
+  },
+  {
+    q: "What is in the pocket of your waxed jacket?",
+    options: [
+      { t: "Cartridges, and a biscuit for the dog.", r: { geoff: 2, eddie: 1 }, a: { breeding: 1 } },
+      { t: "A rosary, or something very like one.", r: { dixon: 2, marco: 1 }, a: { method: -1 } },
+      { t: "A clean handkerchief and a spare pair of gloves.", r: { felix: 2, sabrina: 1 }, a: { nerve: 2 } },
+      { t: "Someone else's phone.", r: { gabrielle: 2, susie: 1 }, a: { loyalty: -1 } },
+    ],
+  },
+  {
+    q: "Tarquin is being christened. What is your contribution?",
+    options: [
+      { t: "Standing as godparent, and meaning every word.", r: { geoff: 2, nanny: 1 }, a: { loyalty: 2 } },
+      { t: "An engraved silver mug, with the wrong date on it.", r: { jack: 2, freddy: 1 }, a: { nerve: -1 } },
+      { t: "A quiet word with the vicar about the seating.", r: { sabrina: 2, dixon: 1 }, a: { breeding: 1 } },
+      { t: "A trust fund, held somewhere sunny.", r: { stanley: 2, bobby: 1 }, a: { appetite: 1 } },
+    ],
+  },
+  {
+    q: "How do you arrive at a stately home?",
+    options: [
+      { t: "By helicopter, on the croquet lawn.", r: { stanley: 2, marco: 1 }, a: { appetite: 2 } },
+      { t: "By the tradesmen's entrance, out of habit.", r: { jimmy: 2, felix: 1 }, a: { breeding: -2 } },
+      { t: "In a Land Rover older than I am.", r: { geoff: 2, charly: 1 }, a: { breeding: 1 } },
+      { t: "On foot from the station, in good shoes.", r: { nanny: 2, dixon: 1 }, a: { nerve: 1 } },
+    ],
+  },
+  {
+    q: "A fight is fixed against someone you love.",
+    options: [
+      { t: "Get in the ring myself next time.", r: { jack: 2, dixon: 1 }, a: { method: 2, nerve: -1 } },
+      { t: "Find the promoter, and have a long talk.", r: { eddie: 2, bobby: 1 }, a: { method: 1 } },
+      { t: "Arrange a fix of my own.", r: { gabrielle: 2, susie: 1 }, a: { method: -1 } },
+      { t: "Sit by the hospital bed and pray.", r: { dixon: 2, charly: 1 }, a: { loyalty: 2 } },
+    ],
+  },
+  {
+    q: "What does a falcon teach you?",
+    options: [
+      { t: "Patience.", r: { bella: 2, nanny: 1 }, a: { nerve: 1 } },
+      { t: "That everything comes back to whoever feeds it.", r: { bobby: 2, marco: 1 }, a: { appetite: 1 } },
+      { t: "Never to let something valuable out of your sight.", r: { susie: 2, stanley: 1 }, a: { nerve: 1 } },
+      { t: "Nothing. I would lose it on the first day.", r: { charly: 2, freddy: 1 }, a: { nerve: -1 } },
+    ],
+  },
+  {
+    q: "You find yourself in rehab. How do you spend it?",
+    options: [
+      { t: "Finding God, loudly.", r: { freddy: 2, dixon: 1 }, a: { nerve: -1 } },
+      { t: "Running a small business from the payphone.", r: { bobby: 2, gabrielle: 1 }, a: { appetite: 2 } },
+      { t: "Planning my escape by the second week.", r: { jack: 2, charly: 1 }, a: { nerve: -1 } },
+      { t: "Reading the classics and judging the curtains.", r: { sabrina: 2, bella: 1 }, a: { breeding: 2 } },
+    ],
+  },
+  {
+    q: "Choose a bottle.",
+    options: [
+      { t: "A 1961 claret I won at cards.", r: { stanley: 2, eddie: 1 }, a: { breeding: 1 } },
+      { t: "A Barolo from my godfather's vineyard.", r: { bella: 2, marco: 1 }, a: { breeding: 1 } },
+      { t: "Whatever is in the decanter. All of it.", r: { jack: 2, freddy: 1 }, a: { nerve: -1 } },
+      { t: "Tea, from a flask, in a pigeon hide.", r: { geoff: 2, felix: 1 }, a: { appetite: -1 } },
+    ],
+  },
+  {
+    q: "The estate needs a new dog.",
+    options: [
+      { t: "A pair of black Labradors named after battles.", r: { eddie: 2, geoff: 1 }, a: { breeding: 1 } },
+      { t: "A Dobermann that only obeys Italian.", r: { marco: 2, bella: 1 }, a: { method: 1 } },
+      { t: "A three-legged rescue that bites the postman.", r: { charly: 2, jack: 1 }, a: { loyalty: 1 } },
+      { t: "No dog. Dogs bark at the wrong time.", r: { gabrielle: 2, felix: 1 }, a: { nerve: 1 } },
+    ],
+  },
+  {
+    q: "The hunt ball. Where will we find you?",
+    options: [
+      { t: "Dancing with whoever owns the most land.", r: { gabrielle: 2, bella: 1 }, a: { appetite: 1 } },
+      { t: "Outside with the drivers and a cigarette.", r: { jimmy: 2, jack: 1 }, a: { breeding: -1 } },
+      { t: "Counting the silver.", r: { felix: 2, sabrina: 1 }, a: { nerve: 1 } },
+      { t: "Behind the marquee, explaining something to a policeman.", r: { freddy: 2, jimmy: 1 }, a: { nerve: -2 } },
+    ],
+  },
+  {
+    q: "Your family motto would be…",
+    options: [
+      { t: "Nemo me impune lacessit.", r: { bobby: 2, marco: 1 }, a: { method: 1 } },
+      { t: "Steady.", r: { nanny: 2, geoff: 1 }, a: { nerve: 2 } },
+      { t: "Ask Mother.", r: { charly: 2, freddy: 1 }, a: { loyalty: 1 } },
+      { t: "Everything has a price.", r: { susie: 2, stanley: 1 }, a: { appetite: 2 } },
+    ],
+  },
+  {
+    q: "Stanley Johnston offers to buy your share of the business.",
+    options: [
+      { t: "Laugh, then have him followed.", r: { bobby: 2, felix: 1 }, a: { nerve: 1 } },
+      { t: "Ask him exactly how much.", r: { gabrielle: 2, marco: 1 }, a: { loyalty: -2 } },
+      { t: "Decline. Some things are not for sale.", r: { eddie: 2, sabrina: 1 }, a: { loyalty: 2 } },
+      { t: "Quote Proverbs at him until he leaves.", r: { dixon: 2, nanny: 1 }, a: { method: -1 } },
+    ],
+  },
+  {
+    q: "Tommy Dixon is dead on the drawing-room floor. Your first thought?",
     options: [
       { t: "I know a man.", r: { susie: 2, eddie: 1 }, a: { nerve: 1 } },
       { t: "I am the man.", r: { felix: 2, bobby: 1 }, a: { nerve: 2, method: 1 } },
-      { t: "Oh God. Is he dead? Is he definitely dead?", r: { freddy: 2, jimmy: 1 }, a: { nerve: -2 } },
-      { t: "Feed it to something large.", r: { marco: 2, dixon: 1 }, a: { method: 2 } },
-    ],
-  },
-  {
-    q: "Someone offers you a fortune to betray your family.",
-    options: [
-      { t: "Laugh, then have them followed.", r: { bobby: 2, eddie: 1 }, a: { nerve: 1, loyalty: 1 } },
-      { t: "Ask exactly how large a fortune.", r: { gabrielle: 2, stanley: 1 }, a: { loyalty: -2, appetite: 1 } },
-      { t: "Tell my mother.", r: { charly: 2, jimmy: 1 }, a: { loyalty: 2 } },
-      { t: "Quote Proverbs at them until they leave.", r: { dixon: 2, sabrina: 1 }, a: { method: -1, loyalty: 1 } },
+      { t: "Oh God. Is he definitely dead?", r: { freddy: 2, jimmy: 1 }, a: { nerve: -2 } },
+      { t: "His brother will want to know who.", r: { dixon: 2, nanny: 1 }, a: { loyalty: 1 } },
     ],
   },
 ];
