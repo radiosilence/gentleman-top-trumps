@@ -31,8 +31,7 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: .22;
-  mix-blend-mode: overlay;
+  opacity: .07;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -159,7 +158,7 @@ dialog {
   max-height: calc(100dvh - 32px);
   box-shadow: inset 0 0 0 4px #0d241a, inset 0 0 0 5px rgba(201, 164, 92, .4), 0 30px 80px rgba(0, 0, 0, .7);
 }
-dialog::backdrop { background: rgba(4, 12, 8, .72); backdrop-filter: blur(3px); }
+dialog::backdrop { background: rgba(4, 12, 8, .82); }
 dialog[open] { animation: pop .35s var(--ease); }
 @keyframes pop { from { opacity: 0; transform: translateY(14px) scale(.96); } }
 

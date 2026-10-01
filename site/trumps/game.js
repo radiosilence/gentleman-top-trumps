@@ -95,6 +95,14 @@ const buzz = (p) => navigator.vibrate?.(p);
 const backURL = `url("data:image/svg+xml,${encodeURIComponent(crest().replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" '))}")`;
 document.documentElement.style.setProperty("--back", backURL);
 
+// Face-down cards in flight never show their front, so skip building it.
+function backEl() {
+  const el = document.createElement("div");
+  el.className = "card down";
+  el.innerHTML = `<div class="card-inner"><div class="face back" style="background: var(--back) center/cover"></div></div>`;
+  return el;
+}
+
 function cardEl(card, { down = false } = {}) {
   const el = document.createElement("div");
   el.className = "card" + (down ? " down" : "");
@@ -220,7 +228,7 @@ async function deal(deck, token) {
   for (let i = 0; i < deck.length; i++) {
     if (token !== state.token) return;
     const toYou = i % 2 === 0;
-    const el = cardEl(deck[i], { down: true });
+    const el = backEl();
     stage.append(el);
     jump(el, { ...centre, r: Math.random() * 10 - 5 });
     flying.push(el);
@@ -409,7 +417,7 @@ async function round(token) {
     const dest = outcome === "win" ? sl.you : sl.cpu;
     const pile = outcome === "win" ? state.you : state.cpu;
     if (state.pot.length) {
-      const potEl = cardEl(state.pot[0], { down: true });
+      const potEl = backEl();
       stage.append(potEl);
       jump(potEl, sl.pot);
       requestAnimationFrame(() => place(potEl, dest, 0.6));
@@ -494,9 +502,11 @@ $("#mute").addEventListener("click", (e) => {
 });
 
 $("#deal").addEventListener("click", () => {
-  ctx().resume?.();
+  audio?.resume?.();
   newGame();
 });
+// Building an AudioContext costs a long frame, so pay it on the first touch rather than when the deal animation starts.
+addEventListener("pointerdown", () => prefs.muted || ctx(), { once: true });
 $("#quit").addEventListener("click", (e) => {
   e.stopPropagation();
   leave();
